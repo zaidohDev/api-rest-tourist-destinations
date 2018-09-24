@@ -10,6 +10,6 @@ class AssessmentViewSet(ModelViewSet):
     queryset = Assessment.objects.all()
     serializer_class = AssessmentSerializer
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('user',)

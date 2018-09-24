@@ -9,7 +9,7 @@ from comments.api.serializers import CommentSerializer
 class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+    # authentication_classes = (TokenAuthentication,)
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('user', 'approved')

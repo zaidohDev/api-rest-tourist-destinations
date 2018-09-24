@@ -7,9 +7,10 @@ from .serializers import TouristDestinationSerializer
 
 
 class TouristDestinationViewSet(ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # queryset = TouristDestination.objects.all()
     serializer_class = TouristDestinationSerializer
+    permission_classes = (IsAuthenticated,)
+    #authentication_classes = (TokenAuthentication,)
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('name', 'locality')
 

@@ -26,9 +26,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['tourists-destinations.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = ['tourists-destinations.herokuapp.com', '127.0.0.1:8000']
 
-
+#ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,7 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tourist_destination.wsgi.application'
 
-default_dburl = 'sqlite:///'+ os.path.join(BASE_DIR, 'db.sqlite3')
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 # Database

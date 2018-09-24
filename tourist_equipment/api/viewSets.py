@@ -10,6 +10,6 @@ class TouristEquipmentViewSet(ModelViewSet):
     queryset = TouristEquipment.objects.all()
     serializer_class = TouristEquipmentSerializer
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     filter_backends = (SearchFilter,)
     search_fields = ('name', 'minimum_age')

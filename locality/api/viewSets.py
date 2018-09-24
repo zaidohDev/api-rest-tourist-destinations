@@ -10,7 +10,7 @@ class LocalityViewSet(ModelViewSet):
     queryset = Locality.objects.all()
     serializer_class = LocalitySerializer
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('line1', 'city')
 
