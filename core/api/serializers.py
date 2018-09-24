@@ -6,14 +6,15 @@ from locality.api.serializers import LocalitySerializer
 
 
 class TouristDestinationSerializer(ModelSerializer):
-    tourist_equipment = TouristEquipmentSerializer(many=True)
-    locality = LocalitySerializer()
-    description_full = SerializerMethodField()
+    tourist_equipment = TouristEquipmentSerializer(many=True, read_only=True)
+    locality = LocalitySerializer(read_only=True)
+    description_full = SerializerMethodField(read_only=True)
 
     class Meta:
         model = TouristDestination
-        fields = ('id', 'name', 'approved', 'photo', 'tourist_equipment', 'locality',
-                  'description_full')
+        fields = ('id', 'name', 'approved', 'photo', 'locality',
+                  'description_full', 'tourist_equipment')
 
     def get_description_full(self, obj):
-        return '%s - %s' %(obj.name, obj.description)
+        return '%s - %s' % (obj.name, obj.description)
+
